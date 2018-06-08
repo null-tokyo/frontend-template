@@ -1,4 +1,3 @@
 export function hello() {
-    alert('helloメソッドが実行された。');
+    document.querySelector('#main').innerHTML = 'Hello World!';
 }
-  

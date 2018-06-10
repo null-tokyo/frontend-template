@@ -1,22 +1,23 @@
 //config
-const config = require('./config');
+const config = require('./gulp/config');
+const $ = require('./gulp/plugins');
 //global
-const gulp = require('gulp');
+const requireDir = require('require-dir');
 
-require('./gulp/script');
-require('./gulp/css');
-require('./gulp/ejs');
-require('./gulp/server');
-require('./gulp/img');
-require('./gulp/clear');
+requireDir('./gulp/tasks', {recurse: true});
 
-gulp.task('build', ['script', 'css', 'ejs']);
-gulp.task('production', ['script', 'css', 'ejs']);
+$.gulp.task('build', ['script', 'css', 'ejs', 'copy']);
+$.gulp.task('production', ['script', 'css', 'ejs', 'copy']);
 
-gulp.task('watch', () => {
-    gulp.watch(config.script.src, ['script']);
-    gulp.watch(config.css.src, ['css']);
-    gulp.watch(config.ejs.src, ['ejs']);
+$.gulp.task('watch', () => {
+    $.gulp.watch(config.script.src, ['script']);
+    $.gulp.watch(config.css.src, ['css']);
+    $.gulp.watch(config.ejs.src, ['ejs']).on('change', () => {
+        $.browserSync.reload();
+    });
+    $.gulp.watch(config.ejs.copy, ['copy']).on('change', () => {
+        $.browserSync.reload();
+    });
 });
 
-gulp.task('default', ['build', 'watch', 'server']); 
+$.gulp.task('default', ['build', 'watch', 'server']); 

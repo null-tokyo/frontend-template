@@ -1,10 +1,11 @@
-const srcPath = './src';
+const ENV  = process.env.NODE_ENV;
+const srcPath = './src';    
 const distPath = './dist';
 
-const config = {
+module.exports = {
     script: {
         src: `${srcPath}/js/**/*.js`,
-        dist: distPath,
+        dist: `${distPath}/js/`,
     },
     ejs: {
         src: `${srcPath}/**/*.ejs`,
@@ -18,12 +19,19 @@ const config = {
         }
     },
     img: {
-        src: `${srcPath}/img/**/*.+(jpg|png|gif|svg)`,
-        dist:`${distPath}/img`
+        src: `${srcPath}/images/**/*.+(jpg|png|gif|svg)`,
+        dist:`${distPath}/images`
     },
     server: {
         server: {
             baseDir: distPath
         }
+    },
+    copy: {
+        base: srcPath,
+        src: [
+            `${srcPath}/images/**/*.+(jpg|png|gif|svg)`
+        ],
+        dist: `${distPath}`
     }
 };

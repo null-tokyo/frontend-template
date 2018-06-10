@@ -7,6 +7,7 @@ const task = function(){
     ];
     let stream = $.gulp.src(config.src)
         .pipe($.plumber())
+        .pipe($.sassGlob())
         .pipe($.sass())
         .pipe($.postcss(processors))
         .pipe($.gulp.dest(config.dist))

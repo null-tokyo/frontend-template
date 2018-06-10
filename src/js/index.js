@@ -1,3 +1,2 @@
-import '../scss/style.scss';
-import { hello } from './sub';
+import { hello } from './modules/sub';
 hello();

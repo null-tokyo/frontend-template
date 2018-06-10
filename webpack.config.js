@@ -10,9 +10,6 @@ module.exports = {
         publicPath: '/',
         filename: 'main.js',
     },
-    plugins: [
-        new PrettierPlugin()
-    ],
     module: {
         rules: [
             /**

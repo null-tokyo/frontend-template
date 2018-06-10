@@ -1,2 +1,2 @@
-import { hello } from './modules/sub';
+import { hello } from "./modules/sub";
 hello();

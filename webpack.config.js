@@ -1,5 +1,6 @@
 const path = require('path');
 const distDir = path.join(__dirname, '/dist');
+const PrettierPlugin = require('prettier-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -9,11 +10,9 @@ module.exports = {
         publicPath: '/',
         filename: 'main.js',
     },
-    serve: {
-        content: 'dist',
-        port: 3000,
-        open: true
-    },
+    plugins: [
+        new PrettierPlugin()
+    ],
     module: {
         rules: [
             /**

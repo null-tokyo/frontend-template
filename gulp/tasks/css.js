@@ -6,10 +6,14 @@ const task = function(){
         $.autoprefixer()
     ];
     let stream = $.gulp.src(config.src)
-        .pipe($.plumber())
         .pipe($.sassGlob())
-        .pipe($.sass())
+        .pipe($.plumber())
+        .pipe($.sourcemaps.init())
+        .pipe($.sass({
+            outputStyle: 'expanded'
+        }))
         .pipe($.postcss(processors))
+        .pipe($.sourcemaps.write(`../maps`))
         .pipe($.gulp.dest(config.dist))
         .pipe($.browserSync.stream());
     return stream;

@@ -1,4 +1,8 @@
 # frontend-template
+## How To Use
+```
+$ npm i
+```
 
 ## Commands
 

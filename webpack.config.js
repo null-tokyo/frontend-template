@@ -20,6 +20,13 @@ module.exports = {
              * JavaScript Settings
              */
             {
+                test: /\.js$/,
+                use: [{
+                    loader: "source-map-loader"
+                }],
+                enforce: "pre"
+            },
+            {
                 enforce: 'pre',
                 test: /\.js$/,
                 exclude: /node_modules/,

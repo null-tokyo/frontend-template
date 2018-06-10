@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf ./dest && NODE_ENV=develop gulp",
-    "dev": "rm -rf ./dest && NODE_ENV=develop gulp build",
+    "start": "rm -rf ./dest && NODE_ENV=development gulp",
+    "dev": "rm -rf ./dest && NODE_ENV=development gulp build",
     "prod": "rm -rf ./dest && NODE_ENV=production gulp production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -37,10 +37,12 @@
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^4.0.1",
     "gulp-sass-glob": "^1.0.9",
+    "gulp-sourcemaps": "^2.6.4",
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.5",
     "require-dir": "^1.0.0",
     "sass-loader": "^7.0.3",
+    "source-map-loader": "^0.2.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.3",

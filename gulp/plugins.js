@@ -7,6 +7,7 @@ module.exports = {
     webpack: require('webpack'),
     webpackStream: require('webpack-stream'),
     sass: require('gulp-sass'),
+    sassGlob: require('gulp-sass-grob'),
     postcss: require('gulp-postcss'),
     autoprefixer: require('autoprefixer')
 }

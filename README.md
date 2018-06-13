@@ -42,6 +42,7 @@ $ npm run dev
 $ npm run prod
 ```
 
+## Directories
 ```
 ├── .eslint
 ├── .gitignore

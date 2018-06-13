@@ -8,7 +8,7 @@ module.exports = {
         dist: `${distPath}/js/`,
     },
     ejs: {
-        src: `${srcPath}/**/*.ejs`,
+        src: `${srcPath}/view/**/*.ejs`,
         dist: distPath
     },
     css: {

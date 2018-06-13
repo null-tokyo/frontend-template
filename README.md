@@ -12,7 +12,7 @@
     - [x] sass-loader
     - [x] postcss-loader
     - [x] prettier
-    - [ ] webpack-glsl-loader
+    - [x] webpack-glsl-loader
 - [x] CSSのベンダープレフィックス付与自動化 (autoprefixer)
 - [x] CSSの圧縮 (csswring)
 - [x] ライブリロード (browser-sync)
@@ -24,20 +24,52 @@
 
 ### Install
 ```
-$npm i
+$ npm i
 ```
 
 ### Start Tasks
 ```
-$npm run start
+$ npm run start
 ```
 
 ### Build By Development Mode
 ```
-$npm run dev
+$ npm run dev
 ```
 
 ### Build By Production Mode
 ```
-$npm run prod
+$ npm run prod
+```
+
+```
+├── .eslint
+├── .gitignore
+├── data.json //HTML内のtitleやdescriptionの設定
+├── gulpfile.js
+├── package.json
+├── gulp
+│   ├── tasks
+│   ├── config.js
+│   └── plugins.js
+├── src
+│   ├── images
+│   ├── js
+│   │   └── modules
+│   ├── scss
+│   │   ├── base
+│   │   ├── component
+│   │   ├── layout
+│   │   ├── project
+│   │   ├── style.scss
+│   │   └── utility
+│   └── view
+│       ├── _template.ejs
+│       ├── base
+│       │   ├── _header.ejs
+│       │   └── _footer.ejs
+│       ├── modules
+│       └── index.ejs
+├── webpack.config.js
+└── dist
 ```

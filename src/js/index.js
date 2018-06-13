@@ -17,6 +17,7 @@ const hoge = () => {
 const fooBar = (foo, bar) => {
   console.log(foo);
   console.log(bar);
+
 };
 
 fooBar(111, {

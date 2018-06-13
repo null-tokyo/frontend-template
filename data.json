@@ -1,0 +1,19 @@
+{
+    "base": {
+        "title": "タイトルがここに入ります。",
+        "description": "ディスクリプション",
+        "keywords": "キーワード",
+        "ogp": {
+            "type": "website"
+        },
+        "twitter": {
+            "card": "summary",
+            "site": "",
+            "creator": ""
+        }
+    },
+    "pages": {
+        "index": {
+        }
+    }
+}

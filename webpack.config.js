@@ -1,12 +1,12 @@
 const path = require('path');
+const srcDir = path.join(__dirname, '/src');
 const distDir = path.join(__dirname, '/dist');
-const PrettierPlugin = require('prettier-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry:  `${__dirname}/src/js/index.js`,
+    entry:  `${srcDir}/js/index.js`,
     output: {
-        path: `${__dirname}/dist/js/`,
+        path: `${distDir}/js/`,
         publicPath: '/',
         filename: 'main.js',
     },
@@ -35,6 +35,12 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.glsl$/,
+                use: {
+                    loader: 'webpack-glsl-loader'
+                }
             },
             {
                 test: /\.js$/,

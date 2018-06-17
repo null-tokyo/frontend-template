@@ -6,6 +6,7 @@ module.exports = {
     log: require('fancy-log'),
     browserSync: require('browser-sync'),
     ejs: require('gulp-ejs'),
+    htmlMinifier: require('gulp-html-minifier'),
     webpack: require('webpack'),
     webpackStream: require('webpack-stream'),
     sass: require('gulp-sass'),

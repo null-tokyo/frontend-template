@@ -17,6 +17,8 @@
 - [x] CSSの圧縮 (csswring)
 - [x] ライブリロード (browser-sync)
 - [ ] SVGスプライト生成
+- [ ] CSSスプライト生成
+- [ ] SVG Minify (SVGO)
 - [x] HTM Minify (html-minifier)
 - [ ] HTMLinter
 - [ ] SassLinter

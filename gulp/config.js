@@ -9,7 +9,8 @@ module.exports = {
     },
     ejs: {
         src: `${srcPath}/view/**/[!_]*.ejs`,
-        dist: distPath
+        dist: distPath,
+        watch: `${srcPath}/view/**/_*.ejs`,
     },
     css: {
         src: `${srcPath}/scss/**/*.scss`,

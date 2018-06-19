@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja">
+<% include('./const/_path') %>
+<% include('./const/_siteData') %>
 <%- include('./base/_header') %>
 <body>
     <header role="banner">
         ヘッダー
-        <nav role="navigation"></nav>
+        <nav role="navigation">
+            <ul>
+                <li>
+                    <a href="<%- PATH.root %>">TOP</a>
+                </li>
+                <li>
+                    <a href="<%- PATH.root + "about" %>">ABOUT</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main id="main" role="main">
         メインコンテンツ

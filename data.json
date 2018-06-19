@@ -1,19 +1,25 @@
 {
     "base": {
-        "title": "タイトルがここに入ります。",
+        "url": "//example.com",
+        "title": "サイトのタイトル",
+        "separator": " | ", 
         "description": "ディスクリプション",
-        "keywords": "キーワード",
-        "ogp": {
-            "type": "website"
-        },
-        "twitter": {
-            "card": "summary",
-            "site": "",
-            "creator": ""
-        }
+        "ogType": "website",
+        "ogLocale": "ja_JP",
+        "twType": "summary",
+        "twSite": "@account"
     },
     "pages": {
         "index": {
+            "title": "TOPページ",
+            "description": "TOPページのディスクリプション",
+            "keywords": "TOPページのキーワード"
+        },
+        "about": {
+            "url": "/about",
+            "title": "ABOUT",
+            "description": "ABOUTのディスクリプション",
+            "keywords": "ABOUTページのキーワード"
         }
     }
 }

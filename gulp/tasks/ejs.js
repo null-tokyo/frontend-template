@@ -10,7 +10,10 @@ const task = function(){
     let stream = $.gulp.src(config.src)
         .pipe($.plumber())
         .pipe($.ejs({data: json}, {}, {ext: '.html'}).on('error', $.log))
-        .pipe($.gulpif(isProd, $.htmlMinifier({})))
+        .pipe($.htmlMinifier({
+            removeComments: true,
+            collapseWhitespace: true
+        }))
         .pipe($.gulp.dest(config.dist))
     return stream;
 }

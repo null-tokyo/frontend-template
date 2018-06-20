@@ -1,2 +1,5 @@
-import PageSpeed from './debug/SiteSpeeed';
-new PageSpeed().getAll();
+/* debug */
+import SiteSpeedChecker from './debug/SiteSpeedChecker';
+import LongTaskChecker from './debug/LongTaskChecker';
+new SiteSpeedChecker().getAll();
+new LongTaskChecker().observe();

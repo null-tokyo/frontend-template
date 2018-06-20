@@ -1,4 +1,4 @@
-class SiteSpeed {
+class SiteSpeedChecker {
     getAll() {
         this.getUseTiming();
         this.getNavigationTiming();
@@ -79,4 +79,4 @@ class SiteSpeed {
     }
 }
 
-export default SiteSpeed;
+export default SiteSpeedChecker;

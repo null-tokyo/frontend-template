@@ -5,6 +5,7 @@
 - [x] タスクランナ- (gulp)
 - [x] HTMLモジュール (EJS)
 - [x] JSモジュールバンドラー (Webpack)
+    - [x] cache-loader
     - [x] babel-loader
     - [x] eslint-loader
     - [x] style-loader

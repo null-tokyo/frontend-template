@@ -1,6 +1,6 @@
 const ENV  = process.env.NODE_ENV;
-const srcPath = './src';    
-const distPath = './dist';
+const srcPath = 'src';    
+const distPath = 'dist';
 
 module.exports = {
     script: {

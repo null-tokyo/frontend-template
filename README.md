@@ -24,7 +24,7 @@
 - [ ] HTMLinter
 - [ ] SassLinter
 
-## Usage
+## Usage
 
 ### Install
 ```
@@ -46,7 +46,7 @@ $ npm run dev
 $ npm run prod
 ```
 
-## Directories
+## Directories
 ```
 ├── .eslint
 ├── .gitignore

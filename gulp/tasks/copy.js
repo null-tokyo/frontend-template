@@ -4,8 +4,8 @@ const config = require('../config').copy;
 const gulp = require('gulp');
 
 const task = function(){
-    gulp.src(config.src,{ base: config.base })
+    return gulp.src(config.src,{ base: config.base })
         .pipe(gulp.dest(config.dist));
 }
 
-gulp.task('copy', () => task());
+gulp.task('copy', task);

@@ -12,4 +12,4 @@ const task = function(){
     return stream;
 }
 
-$.gulp.task('script', () => task());
+$.gulp.task('script', task);

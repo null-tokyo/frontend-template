@@ -26,4 +26,4 @@ const task = function(){
     return stream;
 }
 
-$.gulp.task('css', () => task());
+$.gulp.task('css', task);

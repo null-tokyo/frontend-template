@@ -5,7 +5,7 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync');
 
 const task = function(){
-    browserSync.init(config);
+    return browserSync.init(config);
 }
 
-gulp.task('server', () => task());
+gulp.task('server', task);

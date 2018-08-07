@@ -3,11 +3,17 @@ const config = require('./gulp/config');
 const $ = require('./gulp/plugins');
 //global
 const requireDir = require('require-dir');
+const runSequence = require('run-sequence');
 
 requireDir('./gulp/tasks', {recurse: true});
 
-$.gulp.task('build', ['script', 'css', 'ejs', 'copy']);
-$.gulp.task('production', ['script', 'css', 'ejs', 'copy']);
+$.gulp.task('build', (callback) => {
+    return runSequence(
+        'clean',
+        ['script', 'css', 'ejs', 'copy'],
+        callback
+    );
+});
 
 $.gulp.task('watch', () => {
     $.gulp.watch(config.script.watch, ['script']);
@@ -20,4 +26,11 @@ $.gulp.task('watch', () => {
     });
 });
 
-$.gulp.task('default', ['build', 'watch', 'server']); 
+$.gulp.task('default', (callback) => {
+    return runSequence(
+        'clean',
+        ['script', 'css', 'ejs', 'copy'],
+        ['watch', 'server'],
+        callback
+    );
+}); 

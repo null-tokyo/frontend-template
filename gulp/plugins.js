@@ -1,5 +1,6 @@
 module.exports = {
     gulp: require('gulp'),
+    pug: require('gulp-pug'),
     plumber: require('gulp-plumber'),
     gulpif: require('gulp-if'),
     sourcemaps: require('gulp-sourcemaps'),
@@ -13,5 +14,6 @@ module.exports = {
     sassGlob: require('gulp-sass-glob'),
     postcss: require('gulp-postcss'),
     autoprefixer: require('autoprefixer'),
-    csswring: require('csswring')
+    csswring: require('csswring'),
+    del: require('del')
 }

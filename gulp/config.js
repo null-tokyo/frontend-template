@@ -14,7 +14,12 @@ module.exports = {
     ejs: {
         src: `${srcPath}/view/**/[!_]*.ejs`,
         dist: distPath,
-        watch: `${srcPath}/view/**/_*.ejs`,
+        watch: `${srcPath}/view/**/*.ejs`,
+    },
+    pug: {
+        src: `${srcPath}/view/**/[!_]*.pug`,
+        dist: distPath,
+        watch: `${srcPath}/view/**/*.pug`,
     },
     css: {
         src: `${srcPath}/scss/**/*.scss`,
@@ -37,6 +42,9 @@ module.exports = {
         src: [
             `${srcPath}/images/**/*.+(jpg|png|gif|svg)`
         ],
+        dist: `${distPath}`
+    },
+    clean: {
         dist: `${distPath}`
     }
 };

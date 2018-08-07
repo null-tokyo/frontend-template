@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf ./dest && NODE_ENV=development gulp",
-    "dev": "rm -rf ./dest && NODE_ENV=development gulp build",
-    "prod": "rm -rf ./dest && NODE_ENV=production gulp production",
+    "start": "NODE_ENV=development gulp",
+    "dev": "NODE_ENV=development gulp build",
+    "prod": "NODE_ENV=production gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "cache-loader": "^1.2.2",
     "css-loader": "^0.28.11",
     "csswring": "^6.0.3",
+    "del": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-loader": "^2.0.0",
@@ -41,6 +42,7 @@
     "gulp-if": "^2.0.2",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
+    "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.1",
     "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.4",
@@ -51,6 +53,7 @@
     "prettier-eslint-cli": "^4.7.1",
     "prettier-webpack-plugin": "^1.0.0",
     "require-dir": "^1.0.0",
+    "run-sequence": "^2.2.1",
     "sass-loader": "^7.0.3",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.21.0",

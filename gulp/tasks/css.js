@@ -13,8 +13,13 @@ const task = function(){
     }
 
     let stream = $.gulp.src(config.src)
+        .pipe($.plumber({
+            errorHandler: function(err) {
+                console.log(err.messageFormatted);
+                this.emit('end');
+            }
+        }))
         .pipe($.sassGlob())
-        .pipe($.plumber())
         .pipe($.gulpif(!isProd, $.sourcemaps.init()))
         .pipe($.sass({
             outputStyle: 'expanded'

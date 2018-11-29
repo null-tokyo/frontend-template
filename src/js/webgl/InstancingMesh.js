@@ -1,3 +1,5 @@
+import {THREE} from 'three';
+
 import instancingVert from '../../glsl/instancing.vert';
 import instancingFrag from '../../glsl/instancing.frag';
 

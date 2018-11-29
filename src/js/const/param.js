@@ -20,7 +20,7 @@ class Param {
         for(let key in obj) {
             let val = obj[key];
             let g;
-            if(key.indexOf('Color') > 0) {
+            if(/Color/.test(key)) {
                 g = folder.addColor(val, 'value').name(key);
             }else {
                 if(val.list) {

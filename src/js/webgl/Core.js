@@ -2,6 +2,8 @@
  * Core
  * renderer / mainScene / cameraの管理
  */
+import {THREE} from 'three';
+
 const OPTION = {
     clearColor: 0xDEEEEE,
     isOrthographic: false

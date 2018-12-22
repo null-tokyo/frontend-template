@@ -1,7 +1,7 @@
 const config = require('../config').pug;
 const $ = require('../plugins');
 
-const task = function(){
+const task = function(done){
     let isProd = process.env.NODE_ENV === 'production' ? true : false;
 
     let stream = $.gulp.src(config.src)
@@ -12,6 +12,9 @@ const task = function(){
             collapseWhitespace: true
         }))
         .pipe($.gulp.dest(config.dist))
+
+    done();
+
     return stream;
 }
 

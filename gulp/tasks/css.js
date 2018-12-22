@@ -1,7 +1,7 @@
 const config = require('../config').css;
 const $ = require('../plugins');
 
-const task = function(){
+const task = function(done){
     let isProd = process.env.NODE_ENV === 'production' ? true : false;
 
     const processors = [
@@ -28,6 +28,9 @@ const task = function(){
         .pipe($.gulpif(!isProd, $.sourcemaps.write(`../maps`)))
         .pipe($.gulp.dest(config.dist))
         .pipe($.browserSync.stream());
+
+    done();
+
     return stream;
 }
 

@@ -15,5 +15,7 @@ module.exports = {
     postcss: require('gulp-postcss'),
     autoprefixer: require('autoprefixer'),
     csswring: require('csswring'),
-    del: require('del')
+    del: require('del'),
+    prettier: require('gulp-prettier-plugin'),
+    cache: require('gulp-cache')
 }

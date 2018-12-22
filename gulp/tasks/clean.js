@@ -3,8 +3,9 @@ const $ = require('../plugins');
 
 const task = function(done){
     $.cache.clearAll();
-    $.del(config.dist);
-    done();
+    $.del(config.dist).then(() => {
+        done();
+    });
 }
 
 $.gulp.task('clean', task);

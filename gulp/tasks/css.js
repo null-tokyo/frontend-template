@@ -30,7 +30,7 @@ const task = function(done){
         .pipe($.browserSync.stream());
 
     done();
-
+    
     return stream;
 }
 

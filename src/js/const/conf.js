@@ -1,7 +1,7 @@
 class Conf {
     constructor() {
-        this.debugMode = true;
+        this.debugMode = true
     }
 }
 
-export default new Conf();
+export default new Conf()

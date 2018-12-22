@@ -4,8 +4,7 @@
  * @returns {GMapStyle}
  */
 class GMapCore {
-    constructor () {
-    }
+    constructor() {}
 }
 
-export default GMapCore;
+export default GMapCore

@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from 'jquery'
 
 /**
  * スタイルの変更のためのクラス
@@ -7,10 +7,10 @@ import $ from 'jquery';
  */
 function gMapMarker(base = null) {
     class GMapMarker extends base {
-        constructor (map) {
-            super(map);
-            this.markersData = {};
-            this.marker = {};
+        constructor(map) {
+            super(map)
+            this.markersData = {}
+            this.marker = {}
         }
 
         /**
@@ -18,32 +18,33 @@ function gMapMarker(base = null) {
          * @param key : スタイル名
          * @param styleArray　: 設定内容
          */
-        addMarker (key, value = {}) {
+        addMarker(key, value = {}) {
             const MARKER = {
                 position: {
                     lat: 35.675722,
-                    lng: 139.769540
+                    lng: 139.76954,
                 },
                 title: '',
                 label: '',
                 draggable: false,
                 animation: '',
                 icon: {
-                    url: '/wp/wp-content/themes/i-com/assets/images/common/pin.png',
-                    scaledSize: new google.maps.Size(97.5, 50)
-                }
-            };
+                    url:
+                        '/wp/wp-content/themes/i-com/assets/images/common/pin.png',
+                    scaledSize: new google.maps.Size(97.5, 50),
+                },
+            }
 
-            this.markersData[key] = $.extend({}, MARKER, value);
-            this.markersData[key].map = this.map;
+            this.markersData[key] = $.extend({}, MARKER, value)
+            this.markersData[key].map = this.map
         }
 
         /**
          *
          */
-        renderMarker(){
-            for(let key in this.markersData){
-                this.marker[key] = new google.maps.Marker(this.markersData[key]);
+        renderMarker() {
+            for (let key in this.markersData) {
+                this.marker[key] = new google.maps.Marker(this.markersData[key])
             }
         }
 
@@ -51,11 +52,11 @@ function gMapMarker(base = null) {
          * スタイルを変更する
          * @param key : スタイル名
          */
-        deleteMarker (key) {
-            this.marker[key].setMap(null);
+        deleteMarker(key) {
+            this.marker[key].setMap(null)
         }
     }
-    return GMapMarker;
+    return GMapMarker
 }
 
-export default gMapMarker;
+export default gMapMarker

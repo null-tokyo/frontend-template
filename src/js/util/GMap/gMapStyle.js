@@ -5,9 +5,9 @@
  */
 function gMapStyle(base = null) {
     class GMapStyle extends base {
-        constructor (map) {
-            super(map);
-            this.styles = {};
+        constructor(map) {
+            super(map)
+            this.styles = {}
         }
 
         /**
@@ -15,8 +15,8 @@ function gMapStyle(base = null) {
          * @param key : スタイル名
          * @param styleArray : 設定内容
          */
-        setStyle (key, styleArray) {
-            this.styles[key] = styleArray;
+        setStyle(key, styleArray) {
+            this.styles[key] = styleArray
         }
 
         /**
@@ -24,19 +24,19 @@ function gMapStyle(base = null) {
          * @param key : スタイル名
          * @param styleArray　: 設定内容
          */
-        addStyle (key, style) {
-            this.styles[key].push(style);
+        addStyle(key, style) {
+            this.styles[key].push(style)
         }
 
         /**
          * スタイルを変更する
          * @param key : スタイル名
          */
-        changeStyle (key) {
-            this.map.setOptions({styles: this.styles[key]});
+        changeStyle(key) {
+            this.map.setOptions({ styles: this.styles[key] })
         }
     }
-    return GMapStyle;
+    return GMapStyle
 }
 
-export default gMapStyle;
+export default gMapStyle

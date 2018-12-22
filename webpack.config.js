@@ -1,10 +1,11 @@
+const PrettierPlugin = require('prettier-webpack-plugin')
 const path = require('path');
 const srcDir = path.join(__dirname, '/src');
 const distDir = path.join(__dirname, '/dist');
 
 module.exports = {
     mode: 'development',
-    entry:  {
+    entry: {
         index: `${srcDir}/js/index.js`,
         lib: `${srcDir}/js/lib.js`,
     },
@@ -55,7 +56,7 @@ module.exports = {
                         loader: 'babel-loader',
                         options: {
                             presets: [
-                                ['env', {'modules': false} ]
+                                ['env', { 'modules': false }]
                             ]
                         }
                     }
@@ -79,34 +80,37 @@ module.exports = {
                         }
                     },
                     {
-                      loader: 'sass-loader',
-                      options: {
-                        sourceMap: true,
-                      }
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                        }
                     },
                     {
-                      loader: 'postcss-loader',
-                      options: {
-                        sourceMap: true,
-                        plugins: [
-                          require('autoprefixer')({grid: true})
-                        ]
-                      },
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            plugins: [
+                                require('autoprefixer')({ grid: true })
+                            ]
+                        },
                     }
                 ]
             },
             {
-              test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
-              use: [
-                {
-                  loader: 'url-loader',
-                  options: {
-                    limit: 100 * 1024,
-                    name: './img/[name].[ext]'
-                  }
-                }
-              ]
+                test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 100 * 1024,
+                            name: './img/[name].[ext]'
+                        }
+                    }
+                ]
             }
         ]
-    }
+    },
+    plugins: [
+        new PrettierPlugin()
+    ]
 };

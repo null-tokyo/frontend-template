@@ -1,4 +1,6 @@
 const PrettierPlugin = require('prettier-webpack-plugin')
+const prettierConfig = require('./prettier.config')
+
 const path = require('path');
 const srcDir = path.join(__dirname, '/src');
 const distDir = path.join(__dirname, '/dist');
@@ -111,6 +113,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new PrettierPlugin()
+        new PrettierPlugin(prettierConfig)
     ]
 };

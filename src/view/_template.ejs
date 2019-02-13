@@ -4,25 +4,29 @@
 <% include('./const/_siteData') %>
 <%- include('./base/_header') %>
 <body>
-    <header role="banner">
-        ヘッダー
-        <nav role="navigation">
-            <ul>
-                <li>
-                    <a href="<%- PATH.root %>">TOP</a>
-                </li>
-                <li>
-                    <a href="<%- PATH.root + "about" %>">ABOUT</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main id="main" role="main">
-        <%- include('./pages/_' + name) %>
-    </main>
-    <footer>
-        フッター
-    </footer>
+    <div class="container js-smooth-scroll">
+        <div class="inner  js-smooth-scroll-inner">
+            <header role="banner">
+                ヘッダー
+                <nav role="navigation">
+                    <ul>
+                        <li>
+                            <a href="<%- PATH.root %>">TOP</a>
+                        </li>
+                        <li>
+                            <a href="<%- PATH.root + "about" %>">ABOUT</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main id="main" role="main">
+                <%- include('./pages/_' + name) %>
+            </main>
+            <footer>
+                フッター
+            </footer>
+        </div>
+    </div>
     <%- include('./base/_footer') %>
 </body>
 </html>

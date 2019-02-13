@@ -1,5 +1,6 @@
 {
     "base": {
+        "site": "//example.com", 
         "url": "//example.com",
         "title": "Create by @null_tokyo",
         "separator": " | ", 

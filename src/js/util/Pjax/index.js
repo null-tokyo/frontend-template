@@ -2,18 +2,11 @@ import $ from 'jquery'
 import Barba from 'barba.js'
 
 class Pjax {
-    constructor() {
-        this.onWindowLoad
-        this.onLinkClicked
-        this.onInitStateChange
-        this.onNewPageReady
-        this.onTransitionCompleted
-    }
+    constructor() {}
     init() {
         this._initSetting()
         this._initPreventCheck()
         this._initPageTransiton()
-        this._initEvents()
         Barba.Pjax.start()
     }
     _initSetting() {
@@ -85,43 +78,44 @@ class Pjax {
         return true
     }
     _initPageTransiton() {
-        this.pageTransition = () => this._pageTansition()
-        this.transitionStart = e =>
-            this._transitionStart.bind(Barba.BaseTransition)()
-        this.transitionFadeOut = e =>
-            this._transitionFadeOut.bind(Barba.BaseTransition)()
-        this.transitionFadeIn = e =>
-            this._transitionFadeIn.bind(Barba.BaseTransition)()
+        var HideShowTransition = Barba.BaseTransition.extend({
+            start: function() {
+                Promise.all([this.newContainerLoading, this.fadeOut()]).then(
+                    this.fadeIn.bind(this)
+                )
+            },
+            fadeOut: function() {
+                return $(this.oldContainer)
+                    .animate({ opacity: 0 })
+                    .promise()
+            },
+            fadeIn: function() {
+                var _this = this
+                var $el = $(this.newContainer)
 
-        Barba.Pjax.getTransition = this._pageTansition()
-    }
-    _pageTansition() {
-        return Barba.BaseTransition.extend({
-            start: this.transitionStart,
-            fadeOut: this.transitionFadeOut,
-            fadeIn: this.transitionFadeIn,
+                $(this.oldContainer).hide()
+
+                $el.css({
+                    visibility: 'visible',
+                    opacity: 0,
+                })
+                window.scrollTo(0, 0)
+
+                setTimeout(() => {
+                    $el.animate({ opacity: 1 }, 400, function() {
+                        /**
+                         * 遷移が終了したら.done()を呼び出すのを忘れないでください！
+                         * .done()は自動的にDOMから古いコンテナを削除します。
+                         */
+                        _this.done()
+                    })
+                }, 400)
+            },
         })
-    }
-    _transitionStart() {
-        Promise.all([this.newContainerLoading, this.fadeOut()]).then(
-            this.fadeIn.bind(this)
-        )
-    }
-    _transitionFadeOut() {
-        return $(this.oldContainer)
-            .animate({ opacity: 0 })
-            .promise()
-    }
-    _transitionFadeIn() {
-        let $el = $(this.newContainer)
-        $(this.oldContainer).hide()
-        $el.css({
-            visibility: 'visible',
-            opacity: 0,
-        })
-        $el.animate({ opacity: 1 }, 400, () => {
-            this.done()
-        })
+
+        Barba.Pjax.getTransition = () => {
+            return HideShowTransition
+        }
     }
     _sendGA() {
         Barba.Dispatcher.on('initStateChange', function() {
@@ -141,17 +135,8 @@ class Pjax {
             }
         })
     }
-    _initEvents() {
-        if (this.onWindowLoad) {
-        }
-        if (this.onLinkClicked) {
-        }
-        if (this.onInitStateChange) {
-        }
-        if (this.onNewPageReady) {
-        }
-        if (this.onTransitionCompleted) {
-        }
+    on(event, func) {
+        Barba.Dispatcher.on(event, func)
     }
 }
 

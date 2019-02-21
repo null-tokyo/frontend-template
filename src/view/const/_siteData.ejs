@@ -1,7 +1,7 @@
 <%
 console.log(name);
 var baseData = data.base;
-var pageData = data.pages[name] ? data.pages[name] : data.base;
+var pageData = data.pages[name] ? data.pages[name] : {};
 SITE_DATA = {
     title: pageData.title ? pageData.title + baseData.separator + baseData.title : baseData.title,
     description: pageData.description  ? pageData.description : baseData.description,

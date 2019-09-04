@@ -8,7 +8,10 @@ const distDir = path.join(__dirname, '/dist');
 module.exports = {
     mode: 'development',
     entry: {
-        index: `${srcDir}/js/index.js`,
+        index: [
+            '@babel/polyfill',
+            `${srcDir}/js/index.js`
+        ],
         lib: `${srcDir}/js/lib.js`,
     },
     output: {
